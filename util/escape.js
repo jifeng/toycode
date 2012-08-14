@@ -32,3 +32,18 @@ var escape  = exports.escape    = function(str) {
   return _char.join('');
 }
 
+/**
+ * Escape the given string of `html`.
+ * @param {String} html
+ * @return {String}
+ * connect module
+ * author: visionmedia
+ */
+
+exports.escapeHtml = function(html){
+  return String(html)
+    .replace(/&(?!\w+;)/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+};
