@@ -11,7 +11,7 @@ dome1.on('shot', function (name) {
 dome1.emit('shot', 'dome1');
 
 var Dome2 = function () {};
-Dome2.prototype =  EventEmitter.prototype;
+Dome2.prototype.__proto__ =  EventEmitter.prototype;
 var dome2 = new Dome2();
 dome2.on('shot', function (name) {
   console.log(name + ' is shoted!');
