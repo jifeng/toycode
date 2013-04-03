@@ -9,39 +9,43 @@
 ----------
 
 HTML CODE:
-
-    <div id="container">
-        <div id="header">Header Section</div>
-      <div id="body" class="clearfix">
-        页面容容部分
-      </div>
-      <div id="footer">Footer Section</div>
+```html
+<div id="container">
+  <div id="header">Header Section</div>
+  <div id="body" class="clearfix">
+    页面容容部分
   </div>
+  <div id="footer">Footer Section</div>
+</div>
+```
+
 CSS CODE:
 
-    html,body {
-    margin: 0;
-    padding:0;
-    height: 100%;
-  }
-  #container {
-    min-height:100%;
-    height: auto !important;
-    height: 100%; /*IE6不识别min-height*/
-    position: relative;
-  }
-  #body {
-    width: 960px;
-    margin: 0 auto;
-    padding-bottom: 60px;/*等于footer的高度*/
-  }
-  #footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 60px;/*脚部的高度*/
-    clear:both;
-  }
+```css
+html,body {
+  margin: 0;
+  padding:0;
+  height: 100%;
+}
+#container {
+  min-height:100%;
+  height: auto !important;
+  height: 100%; /*IE6不识别min-height*/
+  position: relative;
+}
+#body {
+  width: 960px;
+  margin: 0 auto;
+  padding-bottom: 60px;/*等于footer的高度*/
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;/*脚部的高度*/
+  clear:both;
+}
+```
 
 优点:
   结构简单清晰，无需js和任何hack能实现各浏览器下的兼容，同时在ipad、iphone下也可以正常运行
@@ -61,34 +65,38 @@ DEMO: http://matthewjamestaylor.com/blog/bottom-footer-demo.htm
 利用footer的margin-top负值来实现footer永远固定在页面的底部效果
 
 HTML CODE：
-    
-  <div id="container">
-    <div id="header">Header Section</div>
-    <div id="page">Main Content</div>
-  </div>  
-    <div id="footer">footer</div>
+
+```html  
+<div id="container">
+  <div id="header">Header Section</div>
+  <div id="page">Main Content</div>
+</div>  
+  <div id="footer">footer</div>
+```
 
 CSS CODE:
 
-    html,body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  #container {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-  }
-  #footer {
-    position: relative;
-    margin-top: -60px;/*等于footer的高度*/
-    height: 60px;
-    clear:both;
-  }
-  #page {
-    padding-bottom: 60px;/*高度等于footer的高度*/
-  }
+```css
+html,body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#container {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+#footer {
+  position: relative;
+  margin-top: -60px;/*等于footer的高度*/
+  height: 60px;
+  clear:both;
+}
+#page {
+  padding-bottom: 60px;/*高度等于footer的高度*/
+}
+```
 
 优点:
 
@@ -111,29 +119,33 @@ DEMO： http://www.lwis.net/profile/CSS/sticky-footer.html
   
 HTML CODE：
 
-    <div id="container">
-      <div id="page"> Content </div>
-      <div class="push"> 空标签</div>
-    </div>
-  <div id="footer">Footer</div>
+```html
+<div id="container">
+    <div id="page"> Content </div>
+    <div class="push"> 空标签</div>
+  </div>
+<div id="footer">Footer</div>
+```
 
 CSS CODE: 
 
-    html,body{
-    height: 100%;
-    margin:0;
-    padding:0;
-  }
-  #container {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -60px;/*margin-bottom的负值等于footer高度*/
-  }
-  .push, #footer {
-    height: 60px;
-    clear:both;
-  }
+```css
+html,body{
+  height: 100%;
+  margin:0;
+  padding:0;
+}
+#container {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -60px;/*margin-bottom的负值等于footer高度*/
+}
+.push, #footer {
+  height: 60px;
+  clear:both;
+}
+```
 
 优点：
 
