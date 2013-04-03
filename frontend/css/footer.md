@@ -151,3 +151,5 @@ http://ryanfait.com/resources/footer-stick-to-bottom-of-page/
 DEMO： http://ryanfait.com/sticky-footer/
 
 其他方法：借助JS脚本
+
+备注：这份文档来自我的同事田超强在内部做的一次技术分享
