@@ -1,0 +1,56 @@
+body{
+ background-color: #FFF; 
+}
+
+input{
+  outline: none;
+  padding-left: 7px;
+}
+
+#search{
+  position:absolute;
+  width: 100%;
+  top: 40%;
+}
+
+.searchHeader{
+  width: 250px;
+  height: 30px;
+  margin: 0 auto; /*div 水平居中*/
+  text-align: center;
+}
+
+#searchContent{
+  width: 547px;
+  height: 36px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.searchContentSingle{
+  width: 500px;
+  height: 100%;
+  float: left;
+}
+
+
+.searchContentSingle input {
+  height: 30px;
+  float: left;
+  border: 2px solid #58B6BF;
+  line-height: 30px;
+  padding-top: 1px;
+  width: 100%;
+}
+
+.searchButton{
+  cursor: pointer;
+  float: left;
+  width: 30px;
+  height: 100%;
+  background-color: #58B6BF;
+}
+
+.searchButton img{
+  padding: 10px 2px 0 0;
+}

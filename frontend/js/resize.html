@@ -1,0 +1,77 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>拖拽元素</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write(unescape('%3Cscript src="http://jquery.com/jquery-wp-content/themes/jquery/js/jquery-1.9.1.min.js"%3E%3C/script%3E'))</script>
+
+<script type="text/javascript">
+
+	$(function(){
+		bindResize('#test-border');
+	});
+	
+	function bindResize(el, main){
+		var parent = $(el).parent();
+		//鼠标的 X 和 Y 轴坐标
+		x = y = 0;
+		//邪恶的食指
+		$(el).mousedown(function(e){
+			//按下元素后，计算当前鼠标与对象计算后的坐标
+			x = e.clientX - parent.width();
+			$(document).bind("mousemove",mouseMove).bind("mouseup",mouseUp)
+			//防止默认事件发生
+			e.preventDefault()
+		});
+		//移动事件
+		function mouseMove(e){
+			//宇宙超级无敌运算中...
+			parent.css('width', e.clientX - x + 'px')
+		}
+		//停止事件
+		function mouseUp(){
+			$(document).unbind("mousemove", mouseMove).unbind("mouseup", mouseUp)
+		}
+	}
+</script>
+<style type="text/css">
+
+#test{
+	top:0;left:0;
+	width:200px;
+	height:100px;
+	background:#f1f1f1; 
+	text-align:center;
+	line-height:100px;
+	border:1px solid #CCC;
+	/*cursor:move;*/
+	float: left;
+}
+
+#test-border{
+	float: right;
+	background:red;
+	height: 100px;
+	width: 5px;
+	cursor:col-resize;
+}
+
+#other{
+	background:blue;
+	float: left;
+	height: 100px;
+	width: 100px;
+}
+</style>
+</head>
+
+<body>
+	<div id="container">
+		<div id="test">用力拉继风同学
+			<div id="test-border"></div>
+		</div>
+		<div id="other"></div>
+	</div>
+</body>
+</html>
