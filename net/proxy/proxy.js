@@ -9,21 +9,22 @@ w2.listen(1923);
 
 var server = net.createServer(function(c) { //'connection' listener
   console.log('server connected');
+  // console.log(c);
   c.on('data', function (data) {
-    // console.log(data.toString());
-    console.log('read:' + c.read(4096));
+    console.log(data.toString());
+    // console.log('read:' + c.read(1024));
   });
   c.on('end', function() {
     console.log('server disconnected');
   });
   c.on('readable', function () {
-    // console.log(c.read(4096));
-    console.log('read:' + c.read(4096));
+    console.log('readable');
+    console.log('read:' + c.read(1024));
   });
   var loc = net.connect({port: 1823}, function() {
-    // loc.pipe(c);
+    loc.pipe(c);
   });
-  // c.pipe(loc);
+  c.pipe(loc);
 });
 
 server.listen(1723, function () {

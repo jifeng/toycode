@@ -7,5 +7,5 @@ exports.w1 = http.createServer(function (req, res, next) {
 });
 
 exports.w2 = http.createServer(function (req, res, next) {
-  res.end('work2 is working, ' + w2count);
+  res.end('work2 is working, ' + w2count++);
 });
