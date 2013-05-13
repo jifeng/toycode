@@ -11,15 +11,19 @@ var server = net.createServer(function(c) { //'connection' listener
   console.log('server connected');
   // console.log(c);
   c.on('data', function (data) {
-    console.log(data.toString());
+    // console.log(data.toString());
     // console.log('read:' + c.read(1024));
   });
   c.on('end', function() {
     console.log('server disconnected');
   });
+
   c.on('readable', function () {
-    console.log('readable');
-    console.log('read:' + c.read(1024));
+    c.read(0);
+    while (null !== (data = c.read(1024))) {
+      // data = c.read(1024);
+      console.log(data);
+    };
   });
   var loc = net.connect({port: 1823}, function() {
     loc.pipe(c);

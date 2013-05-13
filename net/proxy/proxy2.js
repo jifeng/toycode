@@ -1,13 +1,25 @@
 var net = require('net');
 var worker = require('./work');
+var fs = require('fs');
 
 var w1 = worker.w1;
 var w2 = worker.w2;
+
 var p1 = './work1.sock';
 var p2= './work2.sock';
 
 w1.listen(p1);
 w2.listen(p2);
+
+process.on('exit', function () {
+  console.log('jfajofajpfajfapojpo');
+  try {
+    console.log('fjiaofjaiofhoiah');
+    w1.close();
+    w2.close();
+  } catch (e) {
+  }
+});
 
 var getHead = function (data) {
   if (Buffer.isBuffer(data)) {
@@ -49,3 +61,7 @@ var server = net.createServer(function(c) {
 server.listen(1723, function () {
   console.log('proxy is listening');
 });
+
+setTimeout(function () {
+  process.exit(0);
+}, 10 * 1000)

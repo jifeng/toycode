@@ -10,6 +10,12 @@ var server = net.createServer(function(c) { //'connection' listener
   c.write('hello\r\n');
   c.pipe(c);
 });
-server.listen(8124, function() { //'listening' listener
-  console.log('server bound');
+server.listen(8124, function(err) { //'listening' listener
+  console.log(err);
+  console.log('8124 server bound');
+});
+
+server.listen(8125, function(err) { //'listening' listener
+  console.log(err);
+  console.log('8125 server bound');
 });
