@@ -121,7 +121,6 @@ end;
 当使用delimiter命令时，你应该避免使用反斜杠(‘"’)字符，因为那是MySQL的转义字符。
 
 ```sql
-
 delimiter //
 CREATE PROCEDURE pr_show_data (OUT param1 INT)
 BEGIN
@@ -130,5 +129,15 @@ END
 //
 ```
 
-
+```sql
+DROP PROCEDURE IF EXISTS pr_get_rand_valid_user
+CREATE PROCEDURE pr_get_rand_valid_user (
+OUT x varchar(128), 
+OUT y text)
+BEGIN
+  SELECT doc_key, detail INTO x, y FROM dxpweb_document WHERE status = 1 LIMIT 1;
+  UPDATE dxpweb_document SET status = 0 WHERE doc_key = x;
+  SELECT x AS 'key', y as 'value';
+END
+```
 
