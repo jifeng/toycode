@@ -1,0 +1,43 @@
+<!DOCTYPE>
+<html>
+<head>
+</head>
+<body>
+ajax
+</body>
+<script>
+  //同步释放
+  // var xhr = new XMLHttpRequest();
+  // xhr.open("get", "/public/js.html", false);
+  // // xhr.open("get", "/redirect", false);
+  // xhr.send(null);
+  // console.log(xhr);
+  
+  //异步方式
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function () {
+    console.log('yyyyyyyyyyyyyyyyyyyyyy');
+    if (xhr.readyState === 4) {
+      // console.log(xhr);
+      if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304) {
+        alert(xhr.responseText);
+      } else {
+        alert(xhr.status);
+      }
+    } else {
+      console.log('zzzzzzzzzzzzzzz');
+      console.log(xhr);
+      console.log('zzzzzzzzzzzzzzz');
+    }
+
+  };
+
+
+  // var url = "/public/meta.html"
+  // var url = "/redirect";
+  var url = "http://www.baidu.com";
+  console.log(url);
+  xhr.open("get", url, true);
+  xhr.send();
+</script>
+</html>

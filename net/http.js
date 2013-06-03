@@ -13,9 +13,10 @@ app.listen(1723, function () {
 
 process.on('SIGINT', function () {
   console.log('closing');
-  app.destroy();
+  console.time('close');
   app.close(function () {
     console.log('closed');
+    console.timeEnd('close');
     process.exit()
   });
 });
