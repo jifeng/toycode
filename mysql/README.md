@@ -141,3 +141,11 @@ BEGIN
 END
 ```
 
+
+### for update 
+#### 关闭autocommit
+```sql
+show variables like 'autocommit';
+set autocommit = 0;
+```
+

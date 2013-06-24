@@ -1,0 +1,36 @@
+<!DOCTYPE>
+<html>
+<head>
+</head>
+<body>
+ajax
+</body>
+<script>
+  
+  //异步方式
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 302) {
+        //to something
+      } else if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304) {
+        alert(xhr.responseText);
+      } else {
+        alert(xhr.status);
+      }
+    } else {
+      console.log(xhr);
+    }
+
+  };
+  xhr.open('get', '/')
+  // var url = "/post";
+  // console.log(url);
+  // var params = 'a=a&b=b';
+  // xhr.open("post", url, true);
+  // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  // // xhr.setRequestHeader("Content-length", params.length);
+  // // xhr.setRequestHeader("Connection", "close");
+  xhr.send(params);
+</script>
+</html>

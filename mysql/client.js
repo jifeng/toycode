@@ -16,6 +16,6 @@ mysql.query('SHOW DATABASES', function (error, res) {
 });
 
 //要获取存储过程中最后值，需要再存储过程的最后写 select
-mysql.query('call pr_get_rand_valid_user(@a, @b)', function () {
+mysql.query('call pr_get_rand_user(042129)', function () {
   console.log(JSON.stringify(arguments));
 });
