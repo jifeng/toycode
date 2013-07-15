@@ -1,17 +1,9 @@
 var child_process = require('child_process');
+var path = require('path');
 
-child = child_process.spawn('ls', ['-lh', '/usr']);
-child.stdout.setEncoding('utf8');
-child.stdout.on('data', function(data) {
-  console.log(data);
+var n = child_process.fork('./child.js', [], {
+  execPath: '/Users/jifeng/tools/nvm/v0.10.4/bin/node'
 });
-
-child_process.exec('ls -lh /usr', function(err, stdout, stderr) {
-  console.log(stdout);
-});
-
-
-var n = child_process.fork('./child.js');
 n.on('message', function(m) {
   console.log('PARENT got message:', m);
 });

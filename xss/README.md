@@ -11,7 +11,7 @@ XSS又叫CSS (Cross Site Script) ，跨站脚本攻击。
 ```
 ## 生效方式
 
-###　构造URL
+### 构造URL
 
 XSS攻击者通过构造URL的方式构造了一个有问题的页面；当其他人点击了此页面后，会发现页面出错，或者被暗中执行了某些js脚本，这时，攻击行为才真正生效。
 
@@ -117,7 +117,7 @@ http://182.18.24.130/test/xss_url.php?html=a%3Cscript+type%3D%22text%2Fjavascrip
 http://182.18.24.130/test/xss_url.php?html=%3Cscript+type%3D%22text%2Fjavascript%22+src%3D%22http%3A%2F%2F182.18.24.130%2Ftest%2Fa.js%22%3E%3C%2Fscript%3E
 ```
 
-##　防范
+## 防范
 
 XSS攻击的模式很简单，就是把自己的代码嵌入到页面里，随页面一块执行；XSS攻击的防范也一样简单，就是对输出到页面上的内容中特定字符进行转义，使代码不能执行即可。针对出现在不同位置的用户输入内容，其处理策略有所不同。
 
