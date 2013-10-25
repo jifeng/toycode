@@ -10,6 +10,7 @@ app.handle = function(req, res, out) {
     , slashAdded = false
     , index = 0;
   req.url = req.url.substr(protohost.length);
+```
 
 ```bash
 app.handle = function(req, res, out) {
