@@ -18,4 +18,4 @@ get 形式进攻： test_get.html
 post形式攻击： test_post.html
 
 
-
+### 增加进程间消息传递的消耗
