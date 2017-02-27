@@ -17,6 +17,6 @@ const send = function (options) {
 
 var obj = {a: 1}
 setInterval(function () {
-	console.log('master send message', obj);
+  console.log('master send message', obj);
   send(obj);
 }, 1000)
