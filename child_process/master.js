@@ -1,3 +1,4 @@
+'use strict'
 const cp = require('child_process');
 
 
@@ -15,8 +16,8 @@ const send = function (options) {
   }
 };
 
-var obj = {a: 1}
+var obj = require('./data')
 setInterval(function () {
-  console.log('master send message', obj);
+  console.log('master send message');
   send(obj);
 }, 1000)
